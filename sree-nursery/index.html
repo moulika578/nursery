@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sree — Designer Boutique | Made-to-Measure Couture, Bangalore</title>
+    <meta name="description" content="Sree Designer Boutique — made-to-measure bridal, ethnic, and western wear hand-finished in Bangalore.">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts: Cormorant Garamond (display) + Jost (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Custom stylesheet -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<style>
+    /* =========================================================
+   SREE DESIGNER BOUTIQUE  ·  stylesheet
+   Palette: cream / mauve / dusty rose / antique gold
+   Type:    Cormorant Garamond (display) + Jost (body)
+   ========================================================= */
+
+:root {
+    /* Palette — pushed away from bubblegum pink + bright gold */
+    --cream:        #FAF4EE;
+    --cream-deep:   #F2E8DC;
+    --paper:        #FFFFFF;
+    --ink:          #1F1612;
+    --ink-soft:     #5C4A42;
+    --ink-mute:     #8A786E;
+    --rose:         #C77B8B;
+    --rose-deep:    #A45968;
+    --mauve:        #722F37;   /* primary accent — deep wine */
+    --mauve-deep:   #4A1E24;
+    --gold:         #A88B5C;   /* antique, muted */
+    --gold-soft:    #D4B98C;
+    --gold-pale:    #EBE0CC;
+    --line:         #E8DCC8;
+
+    --shadow-soft:  0 8px 32px rgba(31, 22, 18, 0.06);
+    --shadow-hover: 0 24px 60px rgba(31, 22, 18, 0.12);
+
+    --serif: 'Cormorant Garamond', 'Times New Roman', serif;
+    --sans:  'Jost', system-ui, sans-serif;
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+    font-family: var(--sans);
+    font-weight: 300;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--mauve); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--gold); }
+
+::selection { background: var(--mauve); color: var(--cream); }
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; line-height: 1.1; }
+
+.section-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.25rem;
+    color: var(--ink);
+}
+.section-title em { font-style: italic; color: var(--mauve); font-weight: 300; }
+
+.section-lead {
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin-bottom: 2.5rem;
+    font-size: 1.02rem;
+}
+
+/* ---------- Section scaffold ---------- */
+.section { padding: 7rem 0; }
+@media (max-width: 768px) { .section { padding: 4.5rem 0; } }
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+}
+.section-head .section-aside {
+    max-width: 380px;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+}
+@media (max-width: 768px) {
+    .section-head { flex-direction: column; align-items: flex-start; gap: 1.5rem; margin-bottom: 2.5rem; }
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+#mainNav {
+    background: rgba(250, 244, 238, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: padding .35s ease, background .35s ease, border-color .35s ease;
+    padding: 1.1rem 0;
+}
+#mainNav.scrolled {
+    background: rgba(250, 244, 238, 0.96);
+    border-bottom-color: var(--line);
+    padding: 0.65rem 0;
+}
+.navbar-brand { display: flex; flex-direction: column; line-height: 1; padding: 0; }
+.brand-mark {
+    font-family: var(--serif);
+    font-size: 1.85rem;
+    font-weight: 500;
+    color: var(--mauve);
+    letter-spacing: 0.01em;
+}
+.brand-sub {
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--ink-mute);
+    margin-top: 3px;
+    font-weight: 400;
+}
+
+.nav-link {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink) !important;
+    padding: 0.5rem 1.1rem !important;
+    position: relative;
+    font-weight: 400;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 50%; bottom: 6px;
+    width: 0; height: 1px;
+    background: var(--gold);
+    transform: translateX(-50%);
+    transition: width .3s ease;
+}
+.nav-link:hover { color: var(--mauve) !important; }
+.nav-link:hover::after { width: 50%; }
+
+.btn-appointment {
+    background: var(--mauve) !important;
+    color: var(--cream) !important;
+    border: 1px solid var(--mauve);
+    border-radius: 0;
+    padding: 0.7rem 1.5rem !important;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: all .3s;
+}
+.btn-appointment:hover {
+    background: transparent !important;
+    color: var(--mauve) !important;
+}
+
+/* =========================================================
+   HERO  ·  asymmetric editorial
+   ========================================================= */
+.hero {
+    padding: 9rem 0 5rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.hero-row { width: 100%; }
+
+.hero-eyebrow {
+    display: flex; align-items: center; gap: 1rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    color: var(--ink-mute);
+    margin-bottom: 2rem;
+}
+.hero-eyebrow .line { width: 40px; height: 1px; background: var(--gold); }
+
+.hero-title {
+    font-size: clamp(3.5rem, 8.5vw, 7.5rem);
+    line-height: 0.92;
+    margin-bottom: 1.5rem;
+}
+.hero-title em { font-style: italic; color: var(--mauve); font-weight: 300; }
+
+.hero-tagline {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+.hero-desc {
+    max-width: 460px;
+    color: var(--ink-soft);
+    margin-bottom: 2.5rem;
+    font-size: 0.96rem;
+}
+
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+
+.btn-primary-gold {
+    background: var(--mauve);
+    color: var(--cream);
+    border: 1px solid var(--mauve);
+    border-radius: 0;
+    padding: 0.95rem 2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: all .3s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-primary-gold:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+
+.btn-outline-dark-gold {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    padding: 0.95rem 2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: all .3s;
+}
+.btn-outline-dark-gold:hover { background: var(--ink); color: var(--cream); }
+
+.hero-meta {
+    display: flex; gap: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+}
+.hero-meta > div { display: flex; flex-direction: column; }
+.hero-meta strong {
+    font-family: var(--serif);
+    font-size: 1.65rem;
+    color: var(--mauve);
+    font-weight: 500;
+    line-height: 1;
+}
+.hero-meta span {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-mute);
+    margin-top: 6px;
+}
+
+/* Hero image card */
+.hero-visual { position: relative; }
+.hero-image-wrap {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    border: 1px solid var(--line);
+}
+.hero-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.hero-tag {
+    position: absolute;
+    bottom: 1.5rem;
+    left: -1.5rem;
+    background: var(--cream);
+    padding: 1.25rem 1.5rem;
+    border: 1px solid var(--line);
+    display: flex; gap: 1rem; align-items: center;
+    max-width: 280px;
+    box-shadow: var(--shadow-soft);
+}
+.tag-num {
+    font-family: var(--serif);
+    font-size: 2.4rem;
+    color: var(--gold);
+    line-height: 1;
+    font-style: italic;
+}
+.tag-label {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    color: var(--ink);
+    line-height: 1.3;
+}
+.tag-label em { color: var(--ink-soft); font-size: 0.85rem; }
+
+@media (max-width: 991px) {
+    .hero { padding: 7rem 0 4rem; min-height: auto; }
+    .hero-image-wrap { aspect-ratio: 4/4.5; margin-bottom: 2rem; }
+    .hero-tag { left: 1rem; right: 1rem; bottom: 1rem; max-width: none; }
+    .hero-meta { gap: 2rem; }
+}
+
+/* =========================================================
+   COLLECTIONS  ·  editorial 12-col grid
+   ========================================================= */
+.section-collections { background: var(--cream); }
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+}
+.collection {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+.collection:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+
+.collection-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+}
+.collection-image img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .8s ease;
+}
+.collection:hover .collection-image img { transform: scale(1.04); }
+
+.collection-badge {
+    position: absolute; top: 1rem; left: 1rem;
+    background: var(--mauve); color: var(--cream);
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    font-weight: 500;
+}
+
+.collection-body {
+    padding: 1.5rem 1.75rem 1.75rem;
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    flex: 1;
+}
+.collection-num {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+}
+.collection-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+}
+.collection-desc {
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    margin-bottom: 0.9rem;
+    line-height: 1.55;
+}
+.collection-link {
+    font-size: 0.74rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    font-weight: 500;
+    display: inline-flex; align-items: center; gap: 0.25rem;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+}
+.collection-link:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+/* Editorial sizing — Bridal & Ethnic dominate */
+.collection-feature { grid-column: span 7; }
+.collection-feature .collection-image { aspect-ratio: 4/3; }
+.collection-feature .collection-body { padding: 2rem 2.25rem; }
+.collection-feature .collection-title { font-size: 2.2rem; }
+
+.collection-wide { grid-column: span 8; }
+.collection-wide .collection-image { aspect-ratio: 16/9; }
+
+.collection:nth-child(2),
+.collection:nth-child(3),
+.collection:nth-child(5),
+.collection:nth-child(6) { grid-column: span 6; }
+
+.collection-wide:nth-child(4) { grid-column: span 12; }
+
+@media (max-width: 991px) {
+    .collection-feature,
+    .collection-wide,
+    .collection { grid-column: span 12 !important; }
+    .collection-feature .collection-image,
+    .collection-wide .collection-image { aspect-ratio: 4/3; }
+}
+
+/* =========================================================
+   CUSTOM DESIGN  ·  atelier form + live preview
+   ========================================================= */
+.section-custom {
+    background: var(--mauve-deep);
+    color: var(--cream);
+}
+.section-custom .section-eyebrow { color: var(--gold-soft); }
+.section-custom .section-title { color: var(--cream); }
+.section-custom .section-title em { color: var(--gold-soft); }
+.section-custom .section-lead { color: rgba(250, 244, 238, 0.75); }
+
+.atelier-form { margin-top: 1rem; }
+
+.form-step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(212, 185, 140, 0.18);
+    align-items: flex-start;
+}
+.step-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.4rem;
+    color: var(--gold-soft);
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 0.35rem;
+    min-width: 2rem;
+}
+.step-field { flex: 1; }
+
+.form-label {
+    display: block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--gold-soft);
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+.form-label .optional {
+    color: rgba(212, 185, 140, 0.6);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.85rem;
+    font-style: italic;
+}
+
+.form-select, .form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(212, 185, 140, 0.3);
+    border-radius: 0;
+    color: var(--cream);
+    padding: 0.5rem 0;
+    font-size: 1.05rem;
+    font-family: var(--sans);
+    font-weight: 300;
+}
+.form-select:focus, .form-control:focus {
+    background: transparent;
+    border-bottom-color: var(--gold);
+    box-shadow: none;
+    color: var(--cream);
+}
+.form-select option { background: var(--mauve-deep); color: var(--cream); }
+.form-control::placeholder { color: rgba(250, 244, 238, 0.4); }
+.form-control-color { padding: 0; height: 38px; width: 56px; border: 1px solid var(--gold-soft); }
+
+.color-row { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.color-hex {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--gold-soft);
+    font-style: italic;
+}
+.color-hint { font-size: 0.78rem; color: rgba(250, 244, 238, 0.5); }
+
+/* Size pills */
+.size-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.size-pills input { display: none; }
+.size-pills label {
+    border: 1px solid rgba(212, 185, 140, 0.3);
+    padding: 0.55rem 1.1rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all .25s;
+    color: var(--cream);
+}
+.size-pills input:checked + label {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--mauve-deep);
+    font-weight: 500;
+}
+.size-pills label:hover { border-color: var(--gold-soft); }
+
+/* File upload */
+.file-upload {
+    border: 1px dashed rgba(212, 185, 140, 0.4);
+    padding: 1rem 1.25rem;
+    display: flex; align-items: center; gap: 1rem;
+    cursor: pointer;
+    transition: border-color .3s;
+}
+.file-upload:hover { border-color: var(--gold-soft); }
+.file-upload-icon { color: var(--gold-soft); font-size: 1.2rem; }
+.file-upload-text { font-size: 0.92rem; color: rgba(250, 244, 238, 0.7); }
+
+.btn-submit { margin-top: 2rem; }
+.form-feedback {
+    display: block;
+    margin-top: 1rem;
+    color: var(--gold-soft);
+    font-style: italic;
+    font-family: var(--serif);
+    font-size: 1.1rem;
+}
+
+/* Summary card */
+.summary-card {
+    background: rgba(250, 244, 238, 0.04);
+    border: 1px solid rgba(212, 185, 140, 0.2);
+    padding: 2rem;
+    position: sticky;
+    top: 110px;
+}
+.summary-head { margin-bottom: 1.5rem; }
+.summary-title {
+    color: var(--cream);
+    font-size: 1.85rem;
+    margin: 0;
+}
+.summary-card .section-eyebrow { margin-bottom: 0.4rem; }
+
+.silhouette-wrap {
+    background: rgba(0,0,0,0.15);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex; justify-content: center;
+}
+.silhouette {
+    width: 160px; height: auto;
+    transition: all .4s ease;
+}
+
+.summary-list { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+.summary-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(212, 185, 140, 0.12);
+    font-size: 0.92rem;
+}
+.summary-list li span {
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+}
+.summary-list li strong {
+    color: var(--cream);
+    font-weight: 400;
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    display: flex; align-items: center; gap: 0.5rem;
+}
+.swatch {
+    display: inline-block;
+    width: 14px; height: 14px;
+    background: var(--mauve);
+    border: 1px solid var(--gold-soft);
+}
+
+.summary-foot {
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(212, 185, 140, 0.2);
+}
+.summary-foot p {
+    font-size: 0.85rem;
+    color: rgba(250, 244, 238, 0.7);
+    margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 0.5rem;
+}
+.summary-foot strong { color: var(--gold-soft); font-weight: 500; }
+.summary-foot i { color: var(--gold-soft); }
+
+@media (max-width: 991px) {
+    .summary-card { position: static; margin-top: 2rem; }
+}
+
+/* =========================================================
+   GALLERY  ·  asymmetric masonry
+   ========================================================= */
+.section-gallery { background: var(--cream); }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 220px;
+    gap: 1rem;
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    background: var(--ink);
+}
+.gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .9s ease, opacity .4s ease;
+}
+.gallery-item:hover img { transform: scale(1.06); opacity: 0.85; }
+
+.gallery-cap {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.25rem;
+    color: var(--cream);
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    background: linear-gradient(to top, rgba(31,22,18,0.7) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity .4s ease;
+}
+.gallery-cap em { font-style: italic; color: var(--gold-soft); }
+.gallery-item:hover .gallery-cap { opacity: 1; }
+
+.gallery-tall { grid-row: span 2; }
+.gallery-wide { grid-column: span 2; }
+
+@media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+    .gallery-wide { grid-column: span 2; }
+    .gallery-tall { grid-row: span 1; }
+}
+
+/* =========================================================
+   REVIEWS  ·  featured + two small
+   ========================================================= */
+.section-reviews { background: var(--cream-deep); }
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.review {
+    background: var(--paper);
+    padding: 2.25rem;
+    border: 1px solid var(--line);
+    display: flex; flex-direction: column;
+}
+.review-feature { padding: 3rem; }
+
+.review-stars { color: var(--gold); margin-bottom: 1.25rem; font-size: 0.9rem; }
+.review-stars i { margin-right: 2px; }
+
+.review blockquote {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0 0 1.5rem;
+    font-weight: 400;
+    flex: 1;
+}
+.review-feature blockquote { font-size: 1.7rem; line-height: 1.45; }
+.review-feature blockquote::before { content: '"'; color: var(--gold); font-size: 3rem; line-height: 0; vertical-align: -0.4em; margin-right: 0.2em; }
+
+.review-author { display: flex; align-items: center; gap: 1rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+.review-author img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
+.review-author strong { display: block; font-family: var(--serif); font-size: 1.1rem; color: var(--ink); font-weight: 500; }
+.review-author span { font-size: 0.78rem; color: var(--ink-mute); letter-spacing: 0.05em; }
+
+@media (max-width: 991px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+    .review-feature { padding: 2rem; }
+    .review-feature blockquote { font-size: 1.4rem; }
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.section-about { background: var(--cream); }
+.about-image { position: relative; }
+.about-image img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border: 1px solid var(--line);
+}
+.about-caption {
+    display: block;
+    margin-top: 1rem;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+}
+.about-caption em { color: var(--gold); font-style: italic; }
+
+.about-quote {
+    margin: 2.5rem 0;
+    padding: 1.5rem 0 1.5rem 2rem;
+    border-left: 2px solid var(--gold);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--mauve);
+    line-height: 1.4;
+}
+.about-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    font-style: normal;
+    font-family: var(--sans);
+}
+
+.about-meta {
+    display: flex; gap: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
+    flex-wrap: wrap;
+}
+.about-meta strong {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--mauve);
+    display: block;
+    line-height: 1;
+    font-weight: 500;
+}
+.about-meta span {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-mute);
+    margin-top: 6px;
+    display: block;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.section-contact { background: var(--cream-deep); }
+.contact-form { margin-bottom: 3rem; }
+.contact-form .form-label {
+    color: var(--ink-mute);
+    font-size: 0.72rem;
+}
+.contact-form .form-control {
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    background: transparent;
+    padding: 0.6rem 0;
+}
+.contact-form .form-control:focus {
+    border-bottom-color: var(--mauve);
+    color: var(--ink);
+}
+.contact-form .form-control::placeholder { color: var(--ink-mute); }
+
+.contact-feedback {
+    margin-left: 1rem;
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--mauve);
+}
+
+.contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+.info-item {
+    display: flex; gap: 1.25rem; align-items: flex-start;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--line);
+}
+.info-item i {
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin-top: 2px;
+}
+.info-item strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    color: var(--ink);
+    font-weight: 500;
+}
+.info-item span {
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.05em;
+}
+
+.map-wrap {
+    height: 100%;
+    min-height: 480px;
+    border: 1px solid var(--line);
+}
+.map-wrap iframe { display: block; }
+
+@media (max-width: 991px) {
+    .map-wrap { min-height: 360px; margin-top: 1rem; }
+}
+
+/* =========================================================
+   FOOTER  ·  minimal, no CTA banner
+   ========================================================= */
+.footer {
+    background: var(--mauve-deep);
+    color: var(--cream);
+    padding: 4rem 0 2rem;
+}
+.footer-row { padding-bottom: 3rem; border-bottom: 1px solid rgba(212, 185, 140, 0.18); }
+.footer .brand-mark { color: var(--gold-soft); font-size: 2.2rem; }
+.footer-brand p {
+    color: rgba(250, 244, 238, 0.7);
+    max-width: 360px;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.92rem;
+}
+.social { display: flex; gap: 1rem; }
+.social a {
+    width: 38px; height: 38px;
+    border: 1px solid rgba(212, 185, 140, 0.3);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold-soft);
+    transition: all .3s;
+}
+.social a:hover {
+    background: var(--gold);
+    color: var(--mauve-deep);
+    border-color: var(--gold);
+}
+
+.footer-head {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--gold-soft);
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+}
+.footer-links { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin-bottom: 0.7rem; }
+.footer-links a {
+    color: rgba(250, 244, 238, 0.75);
+    font-size: 0.92rem;
+    transition: color .2s;
+}
+.footer-links a:hover { color: var(--gold-soft); }
+
+.footer-addr {
+    color: rgba(250, 244, 238, 0.75);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+.footer-addr strong { color: var(--gold-soft); font-family: var(--serif); font-size: 1.05rem; }
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    font-size: 0.78rem;
+    color: rgba(250, 244, 238, 0.5);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.footer-bottom a { color: rgba(250, 244, 238, 0.7); }
+.footer-bottom a:hover { color: var(--gold-soft); }
+
+/* =========================================================
+   Reduced motion
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Touch device — kill hover-only image zoom */
+@media (pointer: coarse) {
+    .collection:hover .collection-image img,
+    .gallery-item:hover img { transform: none; }
+}
+</style>
+<body>
+
+<!-- =========================================================
+     NAVIGATION
+     ========================================================= -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container-fluid px-3 px-lg-5">
+        <a class="navbar-brand" href="#hero">
+            <span class="brand-mark">Sree</span>
+            <span class="brand-sub">Designer Boutique · Est. 2019</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+                <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#collections">Collections</a></li>
+                <li class="nav-item"><a class="nav-link" href="#custom">Custom Design</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <li class="nav-item ms-lg-3"><a class="btn btn-appointment" href="#contact">Book Appointment</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- =========================================================
+     HERO  ·  asymmetric 7/5 editorial split
+     ========================================================= -->
+<header id="hero" class="hero">
+    <div class="container-fluid px-3 px-lg-5">
+        <div class="row align-items-center g-0">
+            <!-- Left: editorial text block -->
+            <div class="col-lg-7 hero-text order-2 order-lg-1">
+                <div class="hero-eyebrow">
+                    <span class="line"></span>
+                    <span>Vol. 07 — Spring / Summer 2025</span>
+                </div>
+                <h1 class="hero-title">
+                    Sree<br>
+                    <em>Designer Boutique</em>
+                </h1>
+                <p class="hero-tagline">Design Your Dream Dress</p>
+                <p class="hero-desc">
+                    A house of made-to-measure couture, where heritage embroidery meets the lines your silhouette actually deserves. Each piece is cut, stitched, and finished by hand in our Bangalore atelier — one client at a time, never reproduced.
+                </p>
+                <div class="hero-actions">
+                    <a href="#collections" class="btn btn-primary-gold">
+                        Shop Now <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline-dark-gold">Book Appointment</a>
+                </div>
+                <div class="hero-meta">
+                    <div><strong>2019</strong><span>Established · Jayanagar</span></div>
+                    <div><strong>200+ hrs</strong><span>Avg. per bridal piece</span></div>
+                    <div><strong>1 of 1</strong><span>Never reproduced</span></div>
+                </div>
+            </div>
+            <!-- Right: editorial image card -->
+            <div class="col-lg-5 hero-visual order-1 order-lg-2">
+                <div class="hero-image-wrap">
+                    <img src="https://picsum.photos/seed/sree-bridal-portrait-ivory/900/1150" alt="Model in a hand-embroidered Sree couture piece">
+                    <div class="hero-tag">
+                        <span class="tag-num">01</span>
+                        <span class="tag-label">The Veiled Bride<br><em>— Signature Collection</em></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- =========================================================
+     FEATURED COLLECTIONS  ·  editorial 12-col grid, not 3×2
+     ========================================================= -->
+<section id="collections" class="section section-collections">
+    <div class="container-fluid px-3 px-lg-5">
+        <div class="section-head">
+            <div>
+                <p class="section-eyebrow">— The Edit</p>
+                <h2 class="section-title">Six houses, <em>one atelier.</em></h2>
+            </div>
+            <p class="section-aside">Each collection is built around a separate mood, fabric story, and handwork tradition. Click into any for the full look-book and made-to-measure pricing.</p>
+        </div>
+
+        <div class="collections-grid">
+            <!-- Bridal — featured wide card -->
+            <article class="collection collection-feature">
+                <div class="collection-image">
+                    <img src="https://picsum.photos/seed/sree-bridal-zardozi/1200/900" alt="Bridal lehenga with zardozi embroidery">
+                    <span class="collection-badge">Signature</span>
+                </div>
+                <div class="collection-body">
+                    <span class="collection-num">01</span>
+                    <div>
+                        <h3 class="collection-title">Bridal Wear</h3>
+                        <p class="collection-desc">Heirloom pieces hand-embroidered over 200+ hours. Zardozi, gota patti, resham thread — worked in real silver and gold wire. Bookings open 9 months in advance.</p>
+                        <a href="#" class="collection-link">View Details <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Party Wear -->
+            <article class="collection">
+                <div class="collection-image">
+                    <img src="https://picsum.photos/seed/sree-party-cocktail/700/900" alt="Cocktail gown with sequin work">
+                </div>
+                <div class="collection-body">
+                    <span class="collection-num">02</span>
+                    <div>
+                        <h3 class="collection-title">Party Wear</h3>
+                        <p class="collection-desc">Cocktail gowns and sangeet lehengas in sequin, mirror, and crystal work.</p>
+                        <a href="#" class="collection-link">View Details <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Casual Wear -->
+            <article class="collection">
+                <div class="collection-image">
+                    <img src="https://picsum.photos/seed/sree-casual-linen/700/900" alt="Hand-block printed kurta">
+                </div>
+                <div class="collection-body">
+                    <span class="collection-num">03</span>
+                    <div>
+                        <h3 class="collection-title">Casual Wear</h3>
+                        <p class="collection-desc">Hand-block kurtas and easy day dresses in breathable cotton and linen.</p>
+                        <a href="#" class="collection-link">View Details <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Ethnic Wear -->
+            <article class="collection collection-wide">
+                <div class="collection-image">
+                    <img src="https://picsum.photos/seed/sree-ethnic-kanjivaram/1100/700" alt="Kanjivaram saree display">
+                </div>
+                <div class="collection-body">
+                    <span class="collection-num">04</span>
+                    <div>
+                        <h3 class="collection-title">Ethnic Wear</h3>
+                        <p class="collection-desc">Banarasi, Kanjivaram, and anarkali sets sourced directly from weaving clusters in Kanchipuram, Varanasi, and Chanderi — no middleman, no mark-up.</p>
+                        <a href="#" class="collection-link">View Details <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Kids Wear -->
+            <article class="collection">
+                <div class="collection-image">
+                    <img src="https://picsum.photos/seed/sree-kids-miniature/700/900" alt="Child in coordinated outfit">
+                </div>
+                <div class="collection-body">
+                    <span class="collection-num">05</span>
+                    <div>
+                        <h3 class="collection-title">Kids Wear</h3>
+                        <p class="collection-desc">Miniature couture for ages 2–14. Coordinated family sets available.</p>
+                        <a href="#" class="collection-link">View Details <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Western Wear -->
+            <article class="collection">
+                <div class="collection-image">
+                    <img src="https://picsum.photos/seed/sree-western-tailored/700/900" alt="Tailored blazer and slip dress">
+                </div>
+                <div class="collection-body">
+                    <span class="collection-num">06</span>
+                    <div>
+                        <h3 class="collection-title">Western Wear</h3>
+                        <p class="collection-desc">Tailored separates — blazers, slip dresses, wide-leg trousers in Italian wool and silk crepe.</p>
+                        <a href="#" class="collection-link">View Details <i class="bi bi-arrow-right-short"></i></a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     CUSTOM DRESS DESIGN  ·  atelier order form + live preview
+     ========================================================= -->
+<section id="custom" class="section section-custom">
+    <div class="container-fluid px-3 px-lg-5">
+        <div class="row g-5 align-items-start">
+            <!-- Left: form -->
+            <div class="col-lg-7">
+                <p class="section-eyebrow">— The Atelier</p>
+                <h2 class="section-title">Commission a piece, <em>your way.</em></h2>
+                <p class="section-lead">Tell us the lines, the fabric, the colour. We'll send a swatch packet within 4 working days and a costing within 7. No two commissions leave the studio identical.</p>
+
+                <form id="customForm" class="atelier-form">
+                    <!-- Step 01 — Style -->
+                    <div class="form-step">
+                        <span class="step-num">01</span>
+                        <div class="step-field">
+                            <label for="dressStyle" class="form-label">Dress Style</label>
+                            <select class="form-select" id="dressStyle" required>
+                                <option value="">— Choose a silhouette —</option>
+                                <option>Bridal Lehenga</option>
+                                <option>Anarkali Gown</option>
+                                <option>Saree (with bespoke blouse)</option>
+                                <option>Cocktail Gown</option>
+                                <option>Kurta Set</option>
+                                <option>Tailored Separates</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 02 — Fabric -->
+                    <div class="form-step">
+                        <span class="step-num">02</span>
+                        <div class="step-field">
+                            <label for="fabric" class="form-label">Fabric</label>
+                            <select class="form-select" id="fabric" required>
+                                <option value="">— Choose a fabric —</option>
+                                <option>Raw Silk</option>
+                                <option>Mysore Silk</option>
+                                <option>Chiffon</option>
+                                <option>Organza</option>
+                                <option>Velvet</option>
+                                <option>Linen</option>
+                                <option>Italian Crepe</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 03 — Color -->
+                    <div class="form-step">
+                        <span class="step-num">03</span>
+                        <div class="step-field">
+                            <label for="color" class="form-label">Primary Colour</label>
+                            <div class="color-row">
+                                <input type="color" id="color" value="#722F37" class="form-control form-control-color">
+                                <span class="color-hex" id="colorHex">#722F37</span>
+                                <span class="color-hint">Pick any shade — we dye to match.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 04 — Size -->
+                    <div class="form-step">
+                        <span class="step-num">04</span>
+                        <div class="step-field">
+                            <label class="form-label">Size</label>
+                            <div class="size-pills">
+                                <input type="radio" name="size" id="xs" value="XS"><label for="xs">XS</label>
+                                <input type="radio" name="size" id="s" value="S" checked><label for="s">S</label>
+                                <input type="radio" name="size" id="m" value="M"><label for="m">M</label>
+                                <input type="radio" name="size" id="l" value="L"><label for="l">L</label>
+                                <input type="radio" name="size" id="xl" value="XL"><label for="xl">XL</label>
+                                <input type="radio" name="size" id="custom" value="Custom"><label for="custom">Custom</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 05 — Neck -->
+                    <div class="form-step">
+                        <span class="step-num">05</span>
+                        <div class="step-field">
+                            <label for="neck" class="form-label">Neck Design</label>
+                            <select class="form-select" id="neck">
+                                <option value="">— Choose a neckline —</option>
+                                <option>V-Neck</option>
+                                <option>Sweetheart</option>
+                                <option>Boat Neck</option>
+                                <option>High Collar</option>
+                                <option>Off-Shoulder</option>
+                                <option>Halter</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 06 — Sleeve -->
+                    <div class="form-step">
+                        <span class="step-num">06</span>
+                        <div class="step-field">
+                            <label for="sleeve" class="form-label">Sleeve Design</label>
+                            <select class="form-select" id="sleeve">
+                                <option value="">— Choose a sleeve —</option>
+                                <option>Sleeveless</option>
+                                <option>Cap Sleeve</option>
+                                <option>Short Sleeve</option>
+                                <option>Three-Quarter</option>
+                                <option>Full Sleeve</option>
+                                <option>Bell Sleeve</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Step 07 — Reference -->
+                    <div class="form-step">
+                        <span class="step-num">07</span>
+                        <div class="step-field">
+                            <label for="designImage" class="form-label">Upload Reference Image <span class="optional">(optional)</span></label>
+                            <div class="file-upload" id="fileUpload">
+                                <input type="file" id="designImage" accept="image/*" hidden>
+                                <span class="file-upload-icon"><i class="bi bi-paperclip"></i></span>
+                                <span class="file-upload-text" id="fileUploadText">Drop or browse — Pinterest screenshots welcome</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 08 — Notes -->
+                    <div class="form-step">
+                        <span class="step-num">08</span>
+                        <div class="step-field">
+                            <label for="notes" class="form-label">Anything else? <span class="optional">(optional)</span></label>
+                            <textarea class="form-control" id="notes" rows="3" placeholder="Occasion, date needed, embroidery preferences, budget range…"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary-gold btn-submit">
+                        Submit Commission Brief <i class="bi bi-arrow-right"></i>
+                    </button>
+                    <p class="form-feedback" id="formFeedback"></p>
+                </form>
+            </div>
+
+            <!-- Right: live summary + silhouette -->
+            <div class="col-lg-5">
+                <div class="summary-card">
+                    <div class="summary-head">
+                        <span class="section-eyebrow">Live Preview</span>
+                        <h3 class="summary-title">Your Commission</h3>
+                    </div>
+
+                    <!-- SVG dress silhouette — fill updates with color picker -->
+                    <div class="silhouette-wrap">
+                        <svg viewBox="0 0 200 280" class="silhouette" id="dressSilhouette" aria-hidden="true">
+                            <!-- Dress body -->
+                            <path id="dressPath" d="M70,40 Q100,30 130,40 L140,70 L160,120 L155,180 L150,260 L50,260 L45,180 L40,120 L60,70 Z" 
+                                  fill="#722F37" stroke="#A88B5C" stroke-width="1.2"/>
+                            <!-- Neckline -->
+                            <path d="M75,42 Q100,60 125,42" fill="none" stroke="#A88B5C" stroke-width="1.5"/>
+                            <!-- Sleeve hints -->
+                            <path d="M60,70 L40,90 M140,70 L160,90" fill="none" stroke="#A88B5C" stroke-width="1.2"/>
+                            <!-- Embroidery dots -->
+                            <g id="embroidery" stroke="#D4B98C" stroke-width="0.8" fill="none">
+                                <circle cx="80" cy="100" r="2"/>
+                                <circle cx="100" cy="110" r="2"/>
+                                <circle cx="120" cy="100" r="2"/>
+                                <circle cx="90" cy="130" r="2"/>
+                                <circle cx="110" cy="130" r="2"/>
+                                <circle cx="100" cy="150" r="2"/>
+                                <path d="M85,170 L100,165 L115,170"/>
+                                <path d="M85,180 L100,175 L115,180"/>
+                            </g>
+                            <!-- Hanger -->
+                            <path d="M85,15 Q100,5 115,15 L115,40 L85,40 Z" fill="none" stroke="#5C4A42" stroke-width="1"/>
+                        </svg>
+                    </div>
+
+                    <ul class="summary-list">
+                        <li><span>Style</span><strong id="sum-style">—</strong></li>
+                        <li><span>Fabric</span><strong id="sum-fabric">—</strong></li>
+                        <li><span>Colour</span><strong id="sum-color"><span class="swatch" id="sum-swatch"></span>#722F37</strong></li>
+                        <li><span>Size</span><strong id="sum-size">S</strong></li>
+                        <li><span>Neck</span><strong id="sum-neck">—</strong></li>
+                        <li><span>Sleeve</span><strong id="sum-sleeve">—</strong></li>
+                    </ul>
+
+                    <div class="summary-foot">
+                        <p><i class="bi bi-clock-history"></i> Estimated lead time: <strong>8–12 weeks</strong> from swatch approval.</p>
+                        <p><i class="bi bi-truck"></i> Swatch packet ships in <strong>4 working days</strong>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     GALLERY  ·  asymmetric masonry, hover reveals label
+     ========================================================= -->
+<section id="gallery" class="section section-gallery">
+    <div class="container-fluid px-3 px-lg-5">
+        <div class="section-head">
+            <div>
+                <p class="section-eyebrow">— Look Book</p>
+                <h2 class="section-title">From the studio floor.</h2>
+            </div>
+            <p class="section-aside">Selected pieces from the last three seasons. Click any image for the full editorial story.</p>
+        </div>
+
+        <div class="gallery-grid">
+            <a href="#" class="gallery-item gallery-tall">
+                <img src="https://picsum.photos/seed/sree-gallery-1-ivory/700/1000" alt="Editorial shot, ivory lehenga">
+                <span class="gallery-cap"><em>Ivory & Gold</em> · Bridal '24</span>
+            </a>
+            <a href="#" class="gallery-item">
+                <img src="https://picsum.photos/seed/sree-gallery-2-rose/700/500" alt="Rose silk anarkali">
+                <span class="gallery-cap"><em>Rose Silk</em> · Anarkali</span>
+            </a>
+            <a href="#" class="gallery-item">
+                <img src="https://picsum.photos/seed/sree-gallery-3-detail/700/500" alt="Embroidery detail">
+                <span class="gallery-cap"><em>Zardozi</em> · Detail</span>
+            </a>
+            <a href="#" class="gallery-item gallery-wide">
+                <img src="https://picsum.photos/seed/sree-gallery-4-back/1200/600" alt="Back of bridal blouse">
+                <span class="gallery-cap"><em>The Back</em> · Bridal Blouse</span>
+            </a>
+            <a href="#" class="gallery-item">
+                <img src="https://picsum.photos/seed/sree-gallery-5-western/700/700" alt="Tailored western wear">
+                <span class="gallery-cap"><em>Tailored</em> · Western</span>
+            </a>
+            <a href="#" class="gallery-item gallery-tall">
+                <img src="https://picsum.photos/seed/sree-gallery-6-saree/700/1000" alt="Kanjivaram saree drape">
+                <span class="gallery-cap"><em>Kanjivaram</em> · Drape Study</span>
+            </a>
+            <a href="#" class="gallery-item">
+                <img src="https://picsum.photos/seed/sree-gallery-7-kids/700/700" alt="Kids wear editorial">
+                <span class="gallery-cap"><em>Little Sree</em> · Kids</span>
+            </a>
+            <a href="#" class="gallery-item gallery-wide">
+                <img src="https://picsum.photos/seed/sree-gallery-8-process/1200/600" alt="Hand embroidery in progress">
+                <span class="gallery-cap"><em>The Frame</em> · In Process</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     REVIEWS  ·  one large pull-quote + two small
+     ========================================================= -->
+<section id="reviews" class="section section-reviews">
+    <div class="container-fluid px-3 px-lg-5">
+        <p class="section-eyebrow">— Word of Mouth</p>
+        <h2 class="section-title">What our clients <em>actually</em> said.</h2>
+
+        <div class="reviews-grid">
+            <!-- Featured large review -->
+            <article class="review review-feature">
+                <div class="review-stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <blockquote>
+                    "I wore a Sree lehenga for my reception and not a single photograph does it justice. The zardozi on the dupatta alone took their karigar three weeks. Sree Lakshmi sat with me across four fittings and never once made me feel like I was asking too much. The piece is now packed in muslin, waiting for my niece."
+                </blockquote>
+                <div class="review-author">
+                    <img src="https://picsum.photos/seed/sree-review-ananya/120/120" alt="Ananya R.">
+                    <div>
+                        <strong>Ananya R.</strong>
+                        <span>Reception Lehenga · December 2024</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Two smaller reviews -->
+            <article class="review">
+                <div class="review-stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <blockquote>"Brought my grandmother's 1972 Kanjivaram in for restoration. They dismantled, cleaned, and re-wove the border — you cannot tell where the original ends and the new work begins."</blockquote>
+                <div class="review-author">
+                    <img src="https://picsum.photos/seed/sree-review-priya/100/100" alt="Priya M.">
+                    <div>
+                        <strong>Priya M.</strong>
+                        <span>Heirloom Restoration</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="review">
+                <div class="review-stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <blockquote>"My daughter's first birthday outfit. They measured her twice, six weeks apart, because toddlers grow. That kind of patience is not normal anymore."</blockquote>
+                <div class="review-author">
+                    <img src="https://picsum.photos/seed/sree-review-meera/100/100" alt="Meera K.">
+                    <div>
+                        <strong>Meera K.</strong>
+                        <span>Kids Commission · 2024</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     ABOUT  ·  editorial split with pull quote
+     ========================================================= -->
+<section id="about" class="section section-about">
+    <div class="container-fluid px-3 px-lg-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5">
+                <div class="about-image">
+                    <img src="https://picsum.photos/seed/sree-about-atelier/800/950" alt="Inside the Sree atelier">
+                    <span class="about-caption"><em>Inside the Jayanagar atelier —</em> three karigars, two sewing tables, one window.</span>
+                </div>
+            </div>
+            <div class="col-lg-6 offset-lg-1">
+                <p class="section-eyebrow">— Our House</p>
+                <h2 class="section-title">A small studio <em>on purpose.</em></h2>
+                <p>Sree began in 2019 as a single room above a tailor's shop in Jayanagar, Bangalore. The founder, Sree Lakshmi, had spent eight years between Chennai and Mumbai apprenticing under couturiers who insisted that fabric should obey the body, not the other way around.</p>
+                <p>We have grown — carefully — into a three-karigar atelier. We turn down more commissions than we accept, because each piece is signed by the person who made it, and a karigar can only sign what they have actually stitched.</p>
+
+                <blockquote class="about-quote">
+                    "If I cannot tell you which hands made your dress, I should not be selling it to you."
+                    <cite>— Sree Lakshmi, Founder</cite>
+                </blockquote>
+
+                <div class="about-meta">
+                    <div><strong>3</strong><span>Resident karigars</span></div>
+                    <div><strong>14</strong><span>Per-piece artisans</span></div>
+                    <div><strong>1 of 1</strong><span>Always. No exceptions.</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     CONTACT  ·  form + info + map
+     ========================================================= -->
+<section id="contact" class="section section-contact">
+    <div class="container-fluid px-3 px-lg-5">
+        <div class="row g-5">
+            <!-- Left: form + info -->
+            <div class="col-lg-6">
+                <p class="section-eyebrow">— Visit / Write</p>
+                <h2 class="section-title">Begin a <em>conversation.</em></h2>
+                <p class="section-lead">Appointments are by slot only — we keep the studio quiet for fittings in progress. Drop a note and we'll write back within one working day.</p>
+
+                <form id="contactForm" class="contact-form">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label" for="cName">Name</label>
+                            <input type="text" class="form-control" id="cName" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="cPhone">Phone</label>
+                            <input type="tel" class="form-control" id="cPhone" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" for="cEmail">Email</label>
+                            <input type="email" class="form-control" id="cEmail" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label" for="cMsg">Message</label>
+                            <textarea class="form-control" id="cMsg" rows="4" placeholder="Tell us what you're looking for, and when you'd need it by."></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary-gold">Send Message <i class="bi bi-arrow-right"></i></button>
+                            <span class="contact-feedback" id="contactFeedback"></span>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="bi bi-telephone"></i>
+                        <div><strong>+91 80 4567 8910</strong><span>Mon–Sat, 10:30–18:30 IST</span></div>
+                    </div>
+                    <div class="info-item">
+                        <i class="bi bi-envelope"></i>
+                        <div><strong>atelier@sreeboutique.in</strong><span>For commissions & press</span></div>
+                    </div>
+                    <div class="info-item">
+                        <i class="bi bi-geo-alt"></i>
+                        <div><strong>421, 11th Cross, Jayanagar 4th Block</strong><span>Bengaluru, Karnataka 560011</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: map -->
+            <div class="col-lg-6">
+                <div class="map-wrap">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8446633989296!2d77.59456291481707!3d12.927923090884446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae156fc9baf94f%3A0xbfe69c6e2e3e417a!2sJayanagar%204th%20Block!5e0!3m2!1sen!2sin!4v1640000000000" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     FOOTER  ·  minimal, no giant CTA banner
+     ========================================================= -->
+<footer class="footer">
+    <div class="container-fluid px-3 px-lg-5">
+        <div class="row g-4 footer-row">
+            <div class="col-lg-5 footer-brand">
+                <span class="brand-mark">Sree</span>
+                <p>A small atelier in Bangalore making made-to-measure couture, one client at a time.</p>
+                <div class="social">
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="bi bi-pinterest"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                </div>
+            </div>
+            <div class="col-6 col-lg-3 offset-lg-1">
+                <h4 class="footer-head">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#collections">Collections</a></li>
+                    <li><a href="#custom">Custom Design</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Book Appointment</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-3">
+                <h4 class="footer-head">Visit</h4>
+                <p class="footer-addr">421, 11th Cross<br>Jayanagar 4th Block<br>Bengaluru 560011</p>
+                <p class="footer-addr"><strong>+91 80 4567 8910</strong></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Sree Designer Boutique. Hand-stitched in Bengaluru.</span>
+            <span>Site by the atelier · <a href="#">Privacy</a> · <a href="#">Terms</a></span>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="script.js"></script>
+</body>
+</html>
